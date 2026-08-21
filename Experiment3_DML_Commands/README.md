@@ -47,123 +47,156 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+<img width="1298" height="253" alt="image" src="https://github.com/user-attachments/assets/5d5153e9-b768-453f-b4dc-e96926acf040" />
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT
+    product_id,
+    original_price,
+    discount_percentage,
+    original_price * (1-discount_percentage) AS discounted_price,
+    CAST((1-discount_percentage)*100 AS INT) || '%' AS discounted_price_percentage
+FROM products;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1271" height="251" alt="image" src="https://github.com/user-attachments/assets/492a91aa-0c3d-4c2c-b701-87d7aacf4116" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="545" height="362" alt="image" src="https://github.com/user-attachments/assets/855bd6af-23f2-4362-a083-c777746a34d5" />
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT ename FROM emp WHERE ename LIKE 'S____';
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="281" height="273" alt="image" src="https://github.com/user-attachments/assets/6780a65e-792a-4a18-8f2d-8a0034f83f28" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="1087" height="371" alt="image" src="https://github.com/user-attachments/assets/c11c852a-9f75-4aa0-8ad6-7fc07efb3477" />
+
 
 ```sql
--- Paste your SQL code below for Question 3
+DELETE FROM customer WHERE CUST_NAME LIKE '%Holmes%';
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1758" height="330" alt="image" src="https://github.com/user-attachments/assets/668723b1-4507-4a6a-94e9-7dccb67c8964" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="768" height="533" alt="image" src="https://github.com/user-attachments/assets/5a51a37c-592e-4171-a9f9-a5022652636f" />
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT * FROM emp WHERE strftime('%Y',hiredate)='2022';
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1577" height="347" alt="image" src="https://github.com/user-attachments/assets/85d73b6b-914e-4f86-b6d5-56417fce8ce8" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="737" height="263" alt="image" src="https://github.com/user-attachments/assets/a8a39c67-6b4b-4789-a8be-b20a392de2e7" />
 
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE Products SET quantity=quantity*1.1;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1456" height="450" alt="image" src="https://github.com/user-attachments/assets/43888bd9-f4b7-4cf7-9f83-287308c48fe4" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="636" height="367" alt="image" src="https://github.com/user-attachments/assets/48998a3b-d8c8-4e62-b649-b95dad75706c" />
+
 
 ```sql
--- Paste your SQL code below for Question 6
+UPDATE Products SET reorder_lvl=40 WHERE category='Grocery';
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1856" height="345" alt="image" src="https://github.com/user-attachments/assets/feaf4cbc-42a8-415c-95cc-1edcb9f6dd2b" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="1220" height="383" alt="image" src="https://github.com/user-attachments/assets/41b9fe1d-4ea7-4152-b898-938a33e2cb1c" />
+
 
 ```sql
--- Paste your SQL code below for Question 7
+DELETE FROM customer WHERE CUST_CITY !='New York' AND OUTSTANDING_AMT>5000;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1858" height="396" alt="image" src="https://github.com/user-attachments/assets/d64b49fa-b5b4-4620-9273-cd336c886211" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="518" height="486" alt="image" src="https://github.com/user-attachments/assets/3912dc6f-92f4-4b9f-85d4-31c2e4892ff4" />
+
 
 ```sql
--- Paste your SQL code below for Question 8
+UPDATE sales SET sell_price=sell_price+3
+WHERE product_id IN(
+    SELECT product_id FROM products WHERE supplier_id=4
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1177" height="262" alt="image" src="https://github.com/user-attachments/assets/e88d2b3d-271b-420c-bbec-dfe929c47b1d" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="778" height="370" alt="image" src="https://github.com/user-attachments/assets/5dc29c52-07e3-4457-a1f2-221becf4fff5" />
+
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT
+    product_id,
+    original_price,
+    discount_percentage,
+    original_price*(1-discount_percentage) AS discounted_price
+FROM Products ORDER BY discounted_price DESC LIMIT 3;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="806" height="212" alt="image" src="https://github.com/user-attachments/assets/141fb04e-43fe-49aa-bce5-f78a26d050bc" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+<img width="1212" height="435" alt="image" src="https://github.com/user-attachments/assets/4b847add-1b71-4d26-b979-fac1c9fc8edb" />
+
 
 ```sql
--- Paste your SQL code below for Question 10
+UPDATE Employees SET first_name='John' WHERE department_id='80' AND commission_pct<0.35;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1691" height="295" alt="image" src="https://github.com/user-attachments/assets/02a99bef-43e9-4ba4-9725-4f0c4f32bc71" />
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
